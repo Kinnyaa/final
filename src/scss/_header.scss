@@ -1,0 +1,46 @@
+.header {
+  display: flex;
+  height: 88px;
+  background-color: $white;
+  box-sizing: border-box;
+  border-bottom: 1px solid $border-color;
+
+  &__inner {
+    flex: 1;
+    margin: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    &-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .button {
+
+      &:hover {
+        transition: 0.2s;
+        transform: scale(1.1);
+      }
+    }
+
+    .divider {
+      height: 32px;
+      width: 1px;
+    }
+  }
+}
+
+@media (min-width: 1366px) {
+  .header {
+    display: none;
+  }
+}

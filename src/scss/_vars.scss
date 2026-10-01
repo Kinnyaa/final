@@ -1,0 +1,22 @@
+// Базовые цвета.
+$white: #fff;
+$black: #000;
+$gray: #cacaca;
+$error-red: #ff0000;
+
+// Фон, текст и выделение элементов страницы.
+$background: #f8f8f8;
+$main-text-color: #1b1c21;
+$footer-background: $main-text-color;
+$menu-text-color: #7e7e82;
+$border-color: #b8ffec;
+$highlight-color: #41f6d7;
+$accent-color: #ff3e79;
+$menu-hover-border-color: hsl(164, 31%, 85%);
+
+// Поля форм, карточки и точки слайдеров.
+$input-border-color: #eaeaea;
+$card-border-color: $input-border-color;
+$placeholder-color: #b5b6bc;
+$pagination-color: #ddd;
+$pagination-active-color: $placeholder-color;

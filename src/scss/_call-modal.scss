@@ -1,0 +1,160 @@
+.call-modal-layer {
+  position: fixed;
+  z-index: 2000;
+  inset: 0;
+  background-color: rgba($white, 0.9);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+
+  &_open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
+    .call-modal {
+      transform: translateX(0);
+    }
+  }
+}
+
+.call-modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  width: min(440px, 100%);
+  height: 100vh;
+  overflow-y: auto;
+  background-color: $white;
+  box-shadow: -10px 2px 24px rgba($black, 0.14);
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+
+  &__header {
+    padding: 24px 16px 0;
+  }
+
+  &__close {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background-color: transparent;
+    transition: transform 0.2s ease;
+
+    img {
+      display: block;
+      width: 40px;
+      height: 40px;
+    }
+
+    &:hover {
+      transform: scale(1.08);
+    }
+  }
+
+  &__title {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-top: 32px;
+
+    img {
+      position: absolute;
+      left: -16px;
+      width: 4px;
+      height: 40px;
+    }
+
+    h2 {
+      font-size: 24px;
+      line-height: 32px;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 24px 16px;
+  }
+
+  &__input {
+    width: 100%;
+    min-height: 48px;
+    padding: 12px 16px;
+    border: 1px solid $input-border-color;
+    border-radius: 8px;
+    background-color: $white;
+    color: $main-text-color;
+
+    /* autoprefixer: ignore next */
+    &::placeholder {
+      color: $placeholder-color;
+    }
+  }
+
+  &__consent {
+    color: $menu-text-color;
+    font-size: 14px;
+    line-height: 16px;
+
+    a {
+      color: $accent-color;
+      transition: opacity 0.2s ease;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  &__send {
+    align-self: flex-end;
+
+    img {
+      display: block;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .call-modal-layer {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .call-modal {
+    height: auto;
+    min-height: 100%;
+    overflow: visible;
+
+    &__header {
+      padding: 32px 32px 0;
+    }
+
+    &__close {
+      position: absolute;
+      top: 32px;
+      left: -72px;
+    }
+
+    &__title {
+      margin-top: 0;
+
+      img {
+        left: -32px;
+      }
+    }
+
+    &__form {
+      padding: 24px 32px 32px;
+    }
+  }
+}

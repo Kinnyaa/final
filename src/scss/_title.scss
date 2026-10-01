@@ -1,0 +1,59 @@
+.title {
+  margin: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  &__actions {
+    display: none;
+  }
+
+  .highlight {
+    margin-left: -16px;
+  }
+}
+
+@media (min-width: 1366px) {
+  .title {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    min-height: 88px;
+    margin: 0;
+    padding: 24px 32px 16px;
+
+    .highlight {
+      position: absolute;
+      left: 0;
+      margin-left: 0;
+    }
+
+    h1 {
+      font-size: 28px;
+      line-height: 40px;
+    }
+
+    &__actions {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    &__action {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0;
+      color: $main-text-color;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+
+      img {
+        display: block;
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+}

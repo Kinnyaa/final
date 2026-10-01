@@ -1,0 +1,36 @@
+.slide-menu {
+  margin: 16px;
+  display: flex;
+  gap: 16px;
+  height: 40px;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  overflow-x: auto;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  .button {
+    color: $menu-text-color;
+    border: 2px $background solid;
+    white-space: nowrap;
+    padding: 8px 24px;
+    display: flex;
+    align-items: center;
+    transition: border-color 0.2s;
+    border-radius: 6px;
+
+    &:hover {
+      background-color: $white;
+    }
+    &:hover:not(.slide-menu__button_active) {
+      border-color: $menu-hover-border-color;
+    }
+
+    &.slide-menu__button_active {
+      background-color: $white;
+      border-color: $border-color;
+    }
+  }
+}

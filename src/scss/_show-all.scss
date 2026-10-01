@@ -1,0 +1,34 @@
+.show-all {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  transition: color 0.3s;
+
+  &:hover {
+    color: $menu-text-color;
+  }
+
+  &[hidden] {
+    display: none;
+  }
+
+  &.show-all_open {
+    .show-all__icon {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.show-all__text {
+  font-weight: 500;
+}
+
+.show-all__icon {
+  transition: transform 0.2s;
+}

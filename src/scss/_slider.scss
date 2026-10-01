@@ -1,0 +1,95 @@
+.slider {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0 0 36px;
+  overflow: hidden;
+
+  .swiper-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0;
+    box-sizing: content-box;
+  }
+
+  .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    width: 240px;
+    height: 72px;
+    min-width: 0;
+    margin: 0;
+    padding: 16px;
+    gap: 16px;
+    border: 1px solid $card-border-color;
+    border-radius: 6px;
+    background: $white;
+    color: $main-text-color;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+
+    &:focus-visible {
+      outline: 2px solid $accent-color;
+      outline-offset: -3px;
+    }
+
+    .bound {
+      display: block;
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+    }
+  }
+
+  .swiper-pagination {
+    bottom: 0;
+  }
+
+  .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background: $pagination-color;
+    opacity: 1;
+
+    &-active {
+      background: $pagination-active-color;
+    }
+  }
+}
+
+@media (min-width: 767px) {
+  .slider {
+    padding-bottom: 0;
+
+    .swiper-wrapper {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .swiper-slide {
+      width: 100%;
+    }
+
+    .swiper-pagination {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: 1366px) {
+  .slider {
+    .swiper-wrapper {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+}

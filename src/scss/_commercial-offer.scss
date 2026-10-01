@@ -1,0 +1,35 @@
+.commercial-offer {
+  margin: 24px 0;
+  line-height: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  &__link {
+    transition: color 0.3s;
+
+    display: inline;
+    line-height: 24px;
+    font-weight: 500;
+
+    &:hover {
+      color: $menu-text-color;
+    }
+  }
+  &__text {
+    color: $main-text-color;
+  }
+  &__img {
+    width: 7px;
+    height: 12px;
+    vertical-align: middle;
+    margin-left: 8px;
+  }
+}
+
+@media (min-width: 768px) {
+  .commercial-offer {
+    width: 100%;
+    max-width: 421px;
+    margin-right: auto;
+  }
+}

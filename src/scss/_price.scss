@@ -1,0 +1,150 @@
+.price__table-header {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .price {
+    min-width: 0;
+    padding: 16px;
+    background: $background;
+  }
+}
+
+@media (max-width: 768px) {
+  .price-slider {
+    padding-bottom: 36px;
+
+    .price-card {
+      width: 260px;
+      max-width: 260px;
+      height: auto;
+      min-height: 200px;
+      align-items: stretch;
+      text-align: left;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .price-card {
+    line-height: 16px;
+    box-sizing: border-box;
+    width: 260px;
+    max-width: 260px;
+    height: auto;
+    min-height: 200px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 16px;
+    border: 1px $card-border-color solid;
+    border-radius: 6px;
+    background-color: $white;
+    cursor: default;
+
+    &__label {
+      color: $menu-text-color;
+    }
+
+    &__field {
+      display: flex;
+      flex-direction: column;
+    }
+    &__bottom {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 16px;
+
+      .order-button {
+        display: flex;
+        flex-shrink: 0;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        line-height: 0;
+
+        &:hover {
+          transition: 0.2s;
+          transform: scale(1.05);
+        }
+
+        img {
+          display: block;
+          width: 120px;
+          height: 32px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 767px) {
+  .price {
+    padding: 0 16px 16px;
+  }
+}
+
+@media (min-width: 767px) {
+  .price__table-header {
+    display: grid;
+    grid-template-columns: minmax(300px, 1fr) 90px 100px 120px;
+    gap: 16px;
+    padding: 16px;
+    color: $menu-text-color;
+    font-weight: 500;
+  }
+}
+
+@media (min-width: 767px) {
+  .price-slider {
+    padding: 0;
+    overflow: visible;
+
+    .swiper-wrapper {
+      display: block;
+      overflow: hidden;
+      border-radius: 6px;
+      background-color: $white;
+    }
+    .price-card {
+      display: grid;
+      position: relative;
+      grid-template-columns: minmax(300px, 1fr) 90px 100px 120px;
+      align-items: center;
+      gap: 16px;
+      width: 100%;
+      max-width: none;
+      min-height: 72px;
+      padding: 16px;
+      border: 0;
+      border-radius: 0;
+
+      &:last-child {
+        border-bottom: 0;
+      }
+      &__bottom {
+        display: contents;
+      }
+      &:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        right: 16px;
+        bottom: 0;
+        left: 16px;
+        height: 1px;
+        background: $card-border-color;
+      }
+    }
+
+    .border-button{
+      justify-self: end;
+    }
+    .swiper-pagination {
+      display: none;
+    }
+  }
+}

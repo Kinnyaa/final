@@ -1,0 +1,52 @@
+.brands,
+.repair,
+.price__title
+{
+  min-width: 0;
+  padding: 16px;
+  background: $background;
+}
+
+.brands__title,
+.repair__title,
+.price__title
+{
+  display: flex;
+  box-sizing: border-box;
+  text-transform: uppercase;
+  height: 56px;
+  margin: -16px -16px 16px;
+  border-top: 1px solid $border-color;
+  background: linear-gradient(to right, $background, $white);
+  color: $menu-text-color;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+
+  &-text {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+  }
+}
+
+.brands__more,
+.repair__more {
+  display: none;
+}
+
+@media (min-width: 767px) {
+  .brands__more,
+  .repair__more {
+    display: block;
+    margin-top: 16px;
+  }
+}
+
+@media (min-width: 1366px) {
+  .brands,
+  .repair,
+  .price {
+    margin-top: 50px;
+  }
+}
