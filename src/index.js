@@ -4,7 +4,7 @@ document.querySelectorAll('.show-all').forEach((button) => {
     const isExpanded = section.classList.toggle('expandable_expanded');
 
     button.classList.toggle('show-all_open', isExpanded);
-    button.setAttribute('aria-expanded', String(isExpanded));
+    button.setAttribute('aria-expanded', isExpanded);
 
     const buttonText = button.querySelector('.show-all__text');
     const collapsedText = button.dataset.collapsedText || 'Показать все';
